@@ -15,11 +15,12 @@ public static class APILog
             Debug.Log("create folder :: " + FILE_PATH);
         }
 
+        string _date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
         // default
-        string _text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + url + "\t" + request + Environment.NewLine;
+        string _text = string.Format("{0}\t{1}\t{2}", _date, url, request) + Environment.NewLine;
 
         // base64
-        //string _date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         //byte[] _base64byte = Encoding.Unicode.GetBytes(string.Format("{0}\t{1}\t{2}", _date, url, request));
         //string _base64 = System.Convert.ToBase64String(_base64byte);
         //string _text = _base64 + Environment.NewLine;
